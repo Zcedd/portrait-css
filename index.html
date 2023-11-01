@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -10,6 +10,7 @@
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter&display=swap">
 
+    <!-- Style -->
     <style>
         html {
             line-height: 1.15;
@@ -227,55 +228,55 @@
     </style>
 </head>
 
-<body class="antialiased">
+<body>
+    <p id="text">text</p>
+
+    <script>
+        const m = "zcedd",
+            i =
+                "testingggg.",
+            r = (e, t) => {
+                const a = (
+                    r.canvas || (r.canvas = document.createElement("canvas"))
+                ).getContext("2d");
+                return (a.font = t), a.measureText(e).width;
+            },
+            c = (e) => {
+                const t = `1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ .,'()?!"`;
+                let n = 0,
+                    a = 0;
+                for (const o of t) (n += r(o, e)), a++;
+                return Math.floor(n / a);
+            },
+            l = (e, t) => window.getComputedStyle(e, null).getPropertyValue(t),
+            y = (e = document.body) => {
+                const t = l(e, "font-weight") || "normal",
+                    n = l(e, "font-size") || "16px",
+                    a = l(e, "font-family") || "Times New Roman";
+                return `${t} ${n} ${a}`;
+            },
+            f = (e = 100) => {
+                if (e < 1 || e > 100) throw new Error("Invalid fill percentage!");
+                const t = document.getElementById("text"),
+                    n = parseInt(l(t, "font-size").match(/\d+/)[0]),
+                    a = Math.floor((window.innerHeight / n) * (e / 100)),
+                    o = Math.floor(window.innerWidth / (c(y(t)) - 1));
+                return Math.ceil(o * a);
+            },
+            w = i.length,
+            d = document.getElementById("text"),
+            h = document.createElement("title");
+        h.innerHTML = `${m} | CSS Text Portrait`;
+        document.head.appendChild(h);
+        const s = () => {
+            const e = f();
+            d.innerHTML = `${i} `.repeat(Math.ceil(e / w)).substring(0, e + 1);
+        };
+        window.addEventListener("load", s);
+        window.addEventListener("resize", s);
+
+    </script>
 
 </body>
-<p id="text">text</p>
-
-<script>
-    const m = "zcedd",
-        i =
-            "testingggg.",
-        r = (e, t) => {
-            const a = (
-                r.canvas || (r.canvas = document.createElement("canvas"))
-            ).getContext("2d");
-            return (a.font = t), a.measureText(e).width;
-        },
-        c = (e) => {
-            const t = `1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ .,'()?!"`;
-            let n = 0,
-                a = 0;
-            for (const o of t) (n += r(o, e)), a++;
-            return Math.floor(n / a);
-        },
-        l = (e, t) => window.getComputedStyle(e, null).getPropertyValue(t),
-        y = (e = document.body) => {
-            const t = l(e, "font-weight") || "normal",
-                n = l(e, "font-size") || "16px",
-                a = l(e, "font-family") || "Times New Roman";
-            return `${t} ${n} ${a}`;
-        },
-        f = (e = 100) => {
-            if (e < 1 || e > 100) throw new Error("Invalid fill percentage!");
-            const t = document.getElementById("text"),
-                n = parseInt(l(t, "font-size").match(/\d+/)[0]),
-                a = Math.floor((window.innerHeight / n) * (e / 100)),
-                o = Math.floor(window.innerWidth / (c(y(t)) - 1));
-            return Math.ceil(o * a);
-        },
-        w = i.length,
-        d = document.getElementById("text"),
-        h = document.createElement("title");
-    h.innerHTML = `${m} | CSS Text Portrait`;
-    document.head.appendChild(h);
-    const s = () => {
-        const e = f();
-        d.innerHTML = `${i} `.repeat(Math.ceil(e / w)).substring(0, e + 1);
-    };
-    window.addEventListener("load", s);
-    window.addEventListener("resize", s);
-
-</script>
 
 </html>
