@@ -217,7 +217,7 @@
             color: transparent;
             background-clip: text;
             background-image: url('./bg.jpg');
-            filter: brightness(1) grayscale(0) invert(0);
+            filter: brightness(1) grayscale(0.3) invert(0);
             font-family: Inter, sans-serif;
             font-size: 12px;
             line-height: 12px;
@@ -231,10 +231,18 @@
 <body>
     <p id="text">text</p>
 
+    <audio id="player" autoplay loop>
+        <source src="./bg.mp3" type="audio/mp3">
+    </audio>
+
     <script>
+        alert("Hello babe!")
+        alert("I hope you're doing well")
+        alert("here's a little something I made you!")
+        alert("I hope you'll like it!")
         const m = "zcedd",
             i =
-                "Hey, Dad, look at me Think back, and talk to me Did I grow up according to plan ? And do you think I'm wasting my time Doing things I wanna do? But it hurts when you disapprove all along And now I try hard to make it I just want to make you proud I'm never gonna be good enough for you Can't pretend that I'm alright And you can't change me 'Cause we lost it all Nothin' lasts forever I'm sorry I can't be perfect Now it's just too late And we can't go back I'm sorry I can't be perfect I try not to think About the pain I feel inside Did you know you used to be my hero ? All the days you spent with me Now seem so far away And it feels like you don't care any more And now I try hard to make it I just wanna make you proud I'm never gonna be good enough for you I can't stand another fight And nothing's all right 'Cause we lost it all And nothin' lasts forever I'm sorry I can't be perfect Now it's just too late And we can't go back I'm sorry I can't be perfect Nothing's gonna change the things that you said And nothing's gonna make this right again Please don't turn your back I can't believe it's hard just to talk to you But you don't understand 'Cause we lost it all And nothin' lasts forever I'm sorry I can't be perfect Now it's just too late And we can't go back I'm sorry I can't be perfect 'Cause we lost it all And nothin' lasts forever I'm sorry I can't be perfect Now it's just too late And we can't go back I'm sorry I can't be perfect",
+                "I don't wanna go another day So I'm telling you Exactly what is on my mind Seems like everybody's breaking up And throwing their love away But I know I got a good thing right here That's why I say, hey Nobody gonna love me better I'ma stickwitu forever Nobody gonna take me higher I'ma stickwitu You know how to appreciate me I'ma stickwitu, my baby Nobody ever made me feel this way I'ma stickwitu I don't wanna go another day So I'm telling you Exactly what is on my mind See the way we ride in our private lives Ain't nobody getting in between I want you to know That you're the only one for me And I say Nobody gonna love me better I'ma stickwitu forever Nobody gonna take me higher I'ma stickwitu You know how to appreciate me I'ma stickwitu, my baby Nobody ever made me feel this way I'ma stickwitu And now Ain't nothing else I could need And now I'm singing 'cause you're so, so into me I got you We'll be making love endlessly I'm with you Baby, you're with me So don't you worry about People hanging around They ain't bringing us down I know you and you know me And that's all that counts So don't you worry about People hanging around They ain't bringing us down I know you and you know me And that's, that's why I say, hey Nobody gonna love me better I'ma stickwitu forever Nobody gonna take me higher I'ma stickwitu You know how to appreciate me I'ma stickwitu, my baby Nobody ever made me feel this way I'ma stickwitu Nobody gonna love me better I'ma stickwitu forever Nobody gonna take me higher I'ma stickwitu You know how to appreciate me I'ma stickwitu, my baby Nobody ever made me feel this way I'ma stickwitu",
             r = (e, t) => {
                 const a = (
                     r.canvas || (r.canvas = document.createElement("canvas"))
